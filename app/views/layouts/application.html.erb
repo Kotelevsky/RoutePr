@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title%></title>
+  <style type="text/css">
+			html {
+				height: 100%
+			}
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0
+			}
+			#YMapsID {
+				height: 90%;
+				width: 100%;
+			}
+			#map_canvas {
+				height: 100%
+			}
+  </style>
+  <script src="<%= @src_code%>" type="text/javascript"></script>
+  <%= javascript_include_tag load_code%>
+  <script type="text/javascript">
+  	window.onload = function () {
+  		loadPages();
+  	}
+  </script>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+</html>
