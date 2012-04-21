@@ -19,11 +19,25 @@
 				height: 100%
 			}
   </style>
+   <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js"></script>
+   <script type="text/javascript" src=" https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/jquery-ui.js"></script>
+   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" type="text/css" />
   <script src="<%= @src_code%>" type="text/javascript"></script>
   <%= javascript_include_tag load_code%>
   <script type="text/javascript">
   	window.onload = function () {
-  		loadPages();
+  		
+  		var controller = new ClassControll();
+  		controller.LoadPages();	
+  		
+  		$('#Send').click(function() {
+  			// send message to server
+  			$( "#dialog-modal" ).dialog('close');
+  		});
+  		
+  		$('#Cancle').click(function(){
+  			$( "#dialog-modal" ).dialog('close');
+  		});
   	}
   </script>
   <%= csrf_meta_tags %>
